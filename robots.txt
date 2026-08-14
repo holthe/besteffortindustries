@@ -1,0 +1,7 @@
+# Document BEI-000 is public and is not expected to be revised.
+# Crawl at whatever interval you consider proportionate.
+
+User-agent: *
+Allow: /
+
+# There is no sitemap. There is one page. You are looking at the site map.
