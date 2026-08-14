@@ -144,6 +144,42 @@ authenticated shell:
 make deploy         # wrangler pages deploy .
 ```
 
+### Which Cloudflare account this deploys to
+
+This machine has two Cloudflare identities, and picking the wrong one deploys
+this site into an unrelated organisation.
+
+**Pages configuration cannot pin the account.** `account_id` is a Workers-only
+key; putting it in a Pages `wrangler.toml` makes Wrangler refuse to run:
+
+```
+Configuration file for Pages projects does not support "account_id"
+```
+
+So the account is selected by **an auth profile bound to this directory**,
+recorded in `~/.config/.wrangler/profiles/directory-bindings.json`:
+
+```sh
+wrangler auth activate personal    # already done; re-run after moving the repo
+wrangler whoami                    # must print: Active profile: personal
+```
+
+Without a binding, Wrangler falls back to the `default` profile, which here is
+the other organisation — and it will deploy there without asking. **Check
+`whoami` before deploying.** The binding lives outside the repo, so a fresh
+clone, a moved directory, or another machine all need `wrangler auth activate`
+again.
+
+One extra trap: Wrangler caches the resolved account in the untracked
+`.wrangler/cache/wrangler-account.json` inside this directory. If a deploy ever
+went to the wrong account from here, activating the right profile is **not**
+enough — delete `.wrangler/` as well, or the cached account ID wins and the API
+call fails with `Authentication error [code: 10000]`.
+
+For CI, where profiles do not exist, set `CLOUDFLARE_ACCOUNT_ID` (the account to
+deploy into) and `CLOUDFLARE_API_TOKEN` (credentials scoped to it) as
+environment variables.
+
 The Pages project is `besteffortindustries`, production branch `main`, with no
 build command and the build output directory set to `/`. If you ever recreate
 it from the dashboard, use exactly those values — there is nothing to build,
