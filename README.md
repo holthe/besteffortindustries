@@ -47,9 +47,9 @@ Key positions:
 | 002 | Certificate Authority of Vibes — X.509 certificates issued on vibes. All verify as VALID per RFC 58008. | [rfc58008.com](https://rfc58008.com) | In service |
 | 003 | Technical Debt Collector — Scans repos for TODO comments. Issues collection notices via Blame & Associates. Interest accrues. | — | Coming soon |
 | 004 | Committee for the Preservation of Legacy Systems — Heritage trust for production systems. Official blue plaques: DO NOT TOUCH, DO NOT ASK. | — | Coming soon |
-| 005 | Merge Conflict Counselling — Therapy for branches in conflict. Both sides heard. Neither chosen. | — | Coming soon |
+| 005 | Merge Conflict Counselling — Therapy for branches in conflict. Both sides heard. Neither chosen. | [mergeconflictcounselling.com](https://mergeconflictcounselling.com) | In service |
 
-Divisions 003 through 005 are pending indefinitely. "Indefinitely" is used here
+Divisions 003 and 004 remain pending indefinitely. "Indefinitely" is used here
 in its precise sense: no definite date exists.
 
 ## Taking a division live
