@@ -131,7 +131,7 @@
       <dt>Headcount</dt><dd>1 (ALSO THE SINGLE POINT OF FAILURE)</dd>
       <dt>Warranties</dt><dd>NOT EXPRESSED. NOT IMPLIED. NOT CONSIDERED.</dd>
       <dt>Service level</dt><dd>BEST EFFORT (SEE NAME)</dd>
-      <dt>Operating divisions</dt><dd>11 (5 IN SERVICE, 6 PENDING INDEFINITELY)</dd>
+      <dt>Operating divisions</dt><dd>11 (5 IN SERVICE, 6 PENDING INDEFINITELY, PARENT SELF-REGISTERED AS 000)</dd>
     </dl>
   </section>
 
@@ -147,12 +147,29 @@
 
       That is the whole procedure. There is no JSON file, no data layer and no
       templating, and there will not be one. Editing HTML by hand is the feature.
+
+      NUMBERING
+      ---------
+      Division numbers are assigned by this table and nowhere else. A repo does
+      not have a number until it has a row here; it copies the number from this
+      table, never the other way around. Best Effort Industries itself holds
+      000 so the register starts at the top and future disputes are settled by
+      reading it.
     -->
     <table>
       <thead>
         <tr><th>ID</th><th>Division</th><th>Status</th></tr>
       </thead>
       <tbody>
+        <tr>
+          <td>000</td>
+          <td>
+            <div class="name"><a href="https://besteffortindustries.com">Best Effort Industries</a></div>
+            <div class="desc">The parent entity, registered in its own table to reserve the number. All numbering disputes are settled by this row existing.</div>
+            <div class="domain"><a href="https://besteffortindustries.com">besteffortindustries.com</a></div>
+          </td>
+          <td><span class="st live">In service</span></td>
+        </tr>
         <tr>
           <td>001</td>
           <td>
