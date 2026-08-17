@@ -116,11 +116,14 @@
   .st.soon { border: 1px dashed var(--ink); color: var(--dim); }
 
   @media (max-width: 680px) {
-    table, thead, tbody, tr, td { display: block; }
+    table, thead, tbody { display: block; }
     thead { display: none; }
-    tr { border-bottom: 3px solid var(--ink); padding: 12px 0; }
+    tr { display: flex; gap: 10px; border-bottom: 1px solid var(--ink); padding: 10px 0; }
     tr:last-child { border-bottom: none; }
-    td { border-bottom: none; padding: 4px 0; }
+    td { border-bottom: none; padding: 0; }
+    td:first-child { flex: none; width: 42px; }
+    td:last-child { flex: 1; min-width: 0; }
+    td .entry-head { gap: 4px 12px; }
   }
 
   .notice {
