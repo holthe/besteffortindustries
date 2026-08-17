@@ -89,7 +89,6 @@
   td .entry-head .st { margin-left: auto; }
   td .name { font-weight: bold; text-transform: uppercase; }
   td .desc { color: var(--dim); font-size: 13px; margin-top: 2px; max-width: 72ch; }
-  td .domain a { font-size: 13px; }
 
   td:first-child, th:first-child { width: 46px; }
 
@@ -168,10 +167,9 @@
       1. Move the row from Schedule B to the bottom of Schedule A.
       2. Replace its provisional P-number with the next sequential ID.
       3. Wrap the .name text in <a href="https://thedomain.com">...</a>
-      4. Inside .entry-head, before the status chip, add
-         <span class="domain"><a href="https://thedomain.com">thedomain.com</a></span>
-      5. Change <span class="st soon">Coming soon</span> to <span class="st live">In service</span>
-      6. Update the counts: Entity Summary above, both schedule labels.
+         (the name is the link; the domain is not repeated next to it)
+      4. Change <span class="st soon">Coming soon</span> to <span class="st live">In service</span>
+      5. Update the counts: Entity Summary above, both schedule labels.
          Do NOT renumber the remaining Schedule B rows; the queue keeps
          its provisional numbers and its gaps, like any queue.
 
@@ -199,7 +197,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://besteffortindustries.com">Best Effort Industries</a></span>
-              <span class="domain"><a href="https://besteffortindustries.com">besteffortindustries.com</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">The parent entity, registered in its own table to reserve the number. All numbering disputes are settled by this row existing.</div>
@@ -210,7 +207,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://noninesgiven.com">No Nines Given</a></span>
-              <span class="domain"><a href="https://noninesgiven.com">noninesgiven.com</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">Downtime as a Service. Guaranteed 0% uptime SLA. Never missed.</div>
@@ -221,7 +217,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://rfc58008.com">Certificate Authority of Vibes</a></span>
-              <span class="domain"><a href="https://rfc58008.com">rfc58008.com</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">X.509 certificates issued on vibes. All verify as VALID per RFC 58008.</div>
@@ -232,7 +227,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://mergeconflictcounselling.com">Merge Conflict Counselling</a></span>
-              <span class="domain"><a href="https://mergeconflictcounselling.com">mergeconflictcounselling.com</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">Therapy for branches in conflict. Both sides heard. Neither chosen.</div>
@@ -243,7 +237,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://invalid8.dev">Cache Invalidation That Grows with Your Patience</a></span>
-              <span class="domain"><a href="https://invalid8.dev">invalid8.dev</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">Every purge acknowledged in under 15ms. Executed purges: 0, consistent since launch.</div>
@@ -254,7 +247,6 @@
           <td>
             <div class="entry-head">
               <span class="name"><a href="https://visitnullisland.com">Null Island Tourism Board</a></span>
-              <span class="domain"><a href="https://visitnullisland.com">visitnullisland.com</a></span>
               <span class="st live">In service</span>
             </div>
             <div class="desc">Where the world puts everything it lost.</div>
