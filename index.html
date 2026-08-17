@@ -102,8 +102,10 @@
     list-style: none; cursor: pointer;
     border: 1px dashed var(--ink); padding: 10px 14px;
     font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim);
-    display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    display: flex; gap: 10px;
   }
+  details.schedule summary > span:first-child { flex: 1; min-width: 0; }
+  details.schedule summary .toggle { flex: none; }
   details.schedule summary::-webkit-details-marker { display: none; }
   details.schedule summary:hover { color: var(--ink); }
   details.schedule summary .toggle::before { content: "[ UNSEAL ]"; }
@@ -256,7 +258,7 @@
       </tbody>
     </table>
     <details class="schedule">
-      <summary><span>Schedule B &middot; Pending indefinitely (10) &middot; Provisional numbering</span><span class="toggle"></span></summary>
+      <summary><span>Schedule B &middot; Pending indefinitely (10) &middot;&nbsp;Provisional numbering</span><span class="toggle"></span></summary>
     <table>
       <tbody>
         <tr>
