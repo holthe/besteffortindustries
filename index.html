@@ -186,10 +186,11 @@
          (the name is the link; the domain is not repeated next to it)
       4. Change <span class="st soon">Coming soon*</span> to <span class="st live">In service</span>
       5. Update the counts: Entity Summary above, both schedule labels.
-         Do NOT renumber the remaining Schedule B rows; the queue keeps
-         its provisional numbers and its gaps, like any queue. A gap is a
-         record that something left it. A struck row keeps its position in
-         the queue too, whether or not that position is still legible.
+         Renumber the remaining Schedule B rows so the queue closes up.
+         A P-number is a position, not an identity: it exists in this table
+         and nowhere else, so nothing breaks when it moves. A division's
+         position may improve without it getting any closer to service.
+         A struck row holds no position at all.
 
       That is the whole procedure. There is no JSON file, no data layer and no
       templating, and there will not be one. Editing HTML by hand is the feature.
@@ -344,8 +345,8 @@
     </table>
     <details class="schedule">
       <summary><span>Schedule B &middot; Pending indefinitely (4), struck (1)</span><span class="toggle"></span></summary>
-      <div class="sched-label">Provisional numbering &middot; Surrendered on entry into service &middot;
-      Gaps are divisions that left the queue</div>
+      <div class="sched-label">Provisional numbering &middot; Positions close up as the queue moves &middot;
+      Surrendered on entry into service</div>
     <table>
       <tbody>
         <tr class="struck">
@@ -380,7 +381,7 @@
           </td>
         </tr>
                                                 <tr>
-          <td>P-08</td>
+          <td>P-03</td>
           <td>
             <div class="entry-head">
               <span class="name">The Anywhere on Earth Time Authority</span>
@@ -390,7 +391,7 @@
           </td>
         </tr>
         <tr>
-          <td>P-09</td>
+          <td>P-04</td>
           <td>
             <div class="entry-head">
               <span class="name">Bureau of Latency Enforcement</span>
@@ -401,8 +402,6 @@
         </tr>
               </tbody>
     </table>
-      <div class="sched-note">Vacated positions: P-03 to P-07 entered service as 006 to 010.
-      P-10 entered service as 011.</div>
       <div class="sched-note">* Soon is not a date. Schedule B divisions are pending indefinitely,
       in the precise sense: no definite date exists. A struck entry is not pending. It was
       considered, and then it was not.</div>

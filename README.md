@@ -47,8 +47,10 @@ and it is the source of truth for what exists. It has two schedules:
 - **Schedule A** lists divisions in service. They carry real, sequential IDs,
   assigned in order of going live, and the register links each one.
 - **Schedule B** lists divisions pending indefinitely, under provisional queue
-  numbers (`P-01`, `P-02`, ...). Those numbers are surrendered on entry into
-  service. Schedule B rows carry no links, so those sites are unlisted rather
+  numbers (`P-01`, `P-02`, ...). A P-number is a position rather than an
+  identity: it lives in this table and nowhere else, so when a division leaves
+  the queue the rows below it move up. A division's position may improve
+  without it getting any closer to service. Schedule B rows carry no links, so those sites are unlisted rather
   than unreachable: most are deployed and answering on `*.pages.dev`, they are
   simply not advertised here.
 
@@ -119,8 +121,8 @@ table and not at this file.
    name is the link; the address is not repeated beside it.
 4. Change `<span class="st soon">Coming soon</span>` to
    `<span class="st live">In service</span>`.
-5. Update the counts: the Entity Summary block and both schedule labels. Do not
-   renumber the remaining Schedule B rows; the queue keeps its gaps.
+5. Renumber the remaining Schedule B rows so the queue closes up, and update the
+   counts: the Entity Summary block and both schedule labels.
 
 Then point the site itself at its canonical host: `rel=canonical`, `og:url`,
 `og:image` and `twitter:image` in that repository's `index.html`, the domain
