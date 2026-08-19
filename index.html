@@ -91,7 +91,7 @@
   td .name { font-weight: bold; text-transform: uppercase; }
   td .desc { color: var(--dim); font-size: 13px; margin-top: 2px; max-width: 72ch; }
 
-  td:first-child, th:first-child { width: 46px; }
+  td:first-child, th:first-child { width: 46px; white-space: nowrap; }
 
   .sched-note {
     font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
@@ -187,7 +187,9 @@
       4. Change <span class="st soon">Coming soon*</span> to <span class="st live">In service</span>
       5. Update the counts: Entity Summary above, both schedule labels.
          Do NOT renumber the remaining Schedule B rows; the queue keeps
-         its provisional numbers and its gaps, like any queue.
+         its provisional numbers and its gaps, like any queue. A gap is a
+         record that something left it. A struck row keeps its position in
+         the queue too, whether or not that position is still legible.
 
       That is the whole procedure. There is no JSON file, no data layer and no
       templating, and there will not be one. Editing HTML by hand is the feature.
@@ -342,9 +344,21 @@
     </table>
     <details class="schedule">
       <summary><span>Schedule B &middot; Pending indefinitely (4), struck (1)</span><span class="toggle"></span></summary>
-      <div class="sched-label">Provisional numbering &middot; Surrendered on entry into service</div>
+      <div class="sched-label">Provisional numbering &middot; Surrendered on entry into service &middot;
+      Gaps are divisions that left the queue</div>
     <table>
       <tbody>
+        <tr class="struck">
+          <td><span class="redact">P-11</span></td>
+          <td>
+            <div class="entry-head">
+              <span class="name">The Right to Be Forgotten Office</span>
+              <span class="st gone">Erased</span>
+            </div>
+            <div class="desc">Erasure as a service, under Article 17 of the real regulation. Not pursued: the proposal, the minutes and <span class="redact">the name of whoever suggested it</span> have since exercised the right themselves. This row is all that survives, which the register regards as <span class="redact">conclusive</span> evidence that the division would have worked.</div>
+          </td>
+        </tr>
+
         <tr>
           <td>P-01</td>
           <td>
@@ -385,17 +399,7 @@
             <div class="desc">The speed of light is the law. 100% compliance, zero staff, no budget.</div>
           </td>
         </tr>
-                <tr class="struck">
-          <td>P-11</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">The Right to Be Forgotten Office</span>
-              <span class="st gone">Erased</span>
-            </div>
-            <div class="desc">Erasure as a service, under Article 17 of the real regulation. Not pursued: the proposal, the minutes and <span class="redact">the name of whoever suggested it</span> have since exercised the right themselves. This row is all that survives, which the register regards as <span class="redact">conclusive</span> evidence that the division would have worked.</div>
-          </td>
-        </tr>
-      </tbody>
+              </tbody>
     </table>
       <div class="sched-note">* Soon is not a date. Schedule B divisions are pending indefinitely,
       in the precise sense: no definite date exists. A struck entry is not pending. It was
