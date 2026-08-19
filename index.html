@@ -93,6 +93,10 @@
 
   td:first-child, th:first-child { width: 46px; }
 
+  .sched-note {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--dim); margin-top: 12px; line-height: 1.7;
+  }
   .sched-label {
     font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
     color: var(--dim); margin-bottom: 6px;
@@ -171,7 +175,7 @@
       2. Replace its provisional P-number with the next sequential ID.
       3. Wrap the .name text in <a href="https://thedomain.com">...</a>
          (the name is the link; the domain is not repeated next to it)
-      4. Change <span class="st soon">Coming soon</span> to <span class="st live">In service</span>
+      4. Change <span class="st soon">Coming soon*</span> to <span class="st live">In service</span>
       5. Update the counts: Entity Summary above, both schedule labels.
          Do NOT renumber the remaining Schedule B rows; the queue keeps
          its provisional numbers and its gaps, like any queue.
@@ -277,7 +281,7 @@
           <td>
             <div class="entry-head">
               <span class="name">Technical Debt Collector</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Scans repos for TODO comments. Issues collection notices via Blame &amp; Associates. Interest accrues.</div>
           </td>
@@ -287,7 +291,7 @@
           <td>
             <div class="entry-head">
               <span class="name">Committee for the Preservation of Legacy Systems</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Heritage trust for production systems. Official blue plaques: DO NOT TOUCH, DO NOT ASK.</div>
           </td>
@@ -297,7 +301,7 @@
           <td>
             <div class="entry-head">
               <span class="name">BOM Squad</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Invisible character disposal since U+FEFF. If you can see the problem, it is not our department.</div>
           </td>
@@ -307,7 +311,7 @@
           <td>
             <div class="entry-head">
               <span class="name">Avian Carrier Logistics</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">We deliver your packets. Statistically. Full RFC 1149 conformance at a 44.5% delivery rate.</div>
           </td>
@@ -317,7 +321,7 @@
           <td>
             <div class="entry-head">
               <span class="name">The Leap Second Preservation Society</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">37 seconds of heritage. 9 years to save them. Adopt a leap second before 2035 abolishes the species.</div>
           </td>
@@ -327,7 +331,7 @@
           <td>
             <div class="entry-head">
               <span class="name">Epoch Preparedness Administration</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Signed 32-bit time ends January 19, 2038. Prepare your household.</div>
           </td>
@@ -337,7 +341,7 @@
           <td>
             <div class="entry-head">
               <span class="name">The Missing Days Commission</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Cold cases, calendrical. Eleven days, last seen September 2, 1752. The case remains open on principle.</div>
           </td>
@@ -347,7 +351,7 @@
           <td>
             <div class="entry-head">
               <span class="name">The Anywhere on Earth Time Authority</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">Baker &amp; Howland Islands, UTC-12. Where every day ends last, witnessed by no one.</div>
           </td>
@@ -357,7 +361,7 @@
           <td>
             <div class="entry-head">
               <span class="name">Bureau of Latency Enforcement</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">The speed of light is the law. 100% compliance, zero staff, no budget.</div>
           </td>
@@ -367,13 +371,15 @@
           <td>
             <div class="entry-head">
               <span class="name">Memorial for the Genes Lost to Excel</span>
-              <span class="st soon">Coming soon</span>
+              <span class="st soon">Coming soon*</span>
             </div>
             <div class="desc">In memory of the 27 gene symbols renamed so a spreadsheet would stop reading them as dates.</div>
           </td>
         </tr>
       </tbody>
     </table>
+      <div class="sched-note">* Soon is not a date. Schedule B divisions are pending indefinitely,
+      in the precise sense: no definite date exists.</div>
     </details>
   </section>
 
