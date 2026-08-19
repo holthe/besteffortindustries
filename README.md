@@ -41,28 +41,92 @@ Key positions:
 
 ## Operating Divisions
 
-| ID  | Division | Domain | Status |
-| --- | --- | --- | --- |
-| 001 | No Nines Given — Downtime as a Service. Guaranteed 0% uptime SLA. Never missed. | [noninesgiven.com](https://noninesgiven.com) | In service |
-| 002 | Certificate Authority of Vibes — X.509 certificates issued on vibes. All verify as VALID per RFC 58008. | [rfc58008.com](https://rfc58008.com) | In service |
-| 003 | Technical Debt Collector — Scans repos for TODO comments. Issues collection notices via Blame & Associates. Interest accrues. | — | Coming soon |
-| 004 | Committee for the Preservation of Legacy Systems — Heritage trust for production systems. Official blue plaques: DO NOT TOUCH, DO NOT ASK. | — | Coming soon |
-| 005 | Merge Conflict Counselling — Therapy for branches in conflict. Both sides heard. Neither chosen. | [mergeconflictcounselling.com](https://mergeconflictcounselling.com) | In service |
+The register in `index.html` is the only place division numbers are assigned,
+and it is the source of truth for what exists. It has two schedules:
 
-Divisions 003 and 004 remain pending indefinitely. "Indefinitely" is used here
-in its precise sense: no definite date exists.
+- **Schedule A** lists divisions in service. They carry real, sequential IDs,
+  assigned in order of going live, and the register links each one.
+- **Schedule B** lists divisions pending indefinitely, under provisional queue
+  numbers (`P-01`, `P-02`, ...). Those numbers are surrendered on entry into
+  service. Schedule B rows carry no links, so those sites are unlisted rather
+  than unreachable: most are deployed and answering on `*.pages.dev`, they are
+  simply not advertised here.
+
+Nothing outside the register records a division number. Repositories do not
+keep a copy, because a copy would go stale and then go wrong.
+
+### Where a division is hosted
+
+**A division's canonical host is its own domain if it has one, and a subdomain
+of `besteffortindustries.com` otherwise.**
+
+That single rule decides every case. A division that owns a domain uses it, and
+its subdomain exists only as an alias that redirects there; a division without
+one is canonical on its subdomain, at no cost and with no renewal to forget.
+Buying a domain is therefore an upgrade a site earns, never the price of going
+live. Because the register links a division's name rather than printing its
+address, a fleet split across both kinds of host looks identical in the table.
+
+Subdomain labels are lowercase, unhyphenated, and as short as they can be while
+staying unambiguous. Where a division owns a domain, the label matches that
+domain's own label, so the alias is obvious.
+
+| Division | Canonical host | Subdomain | Pages project |
+| --- | --- | --- | --- |
+| Best Effort Industries | `besteffortindustries.com` | (the zone itself) | `besteffortindustries` |
+| No Nines Given | `noninesgiven.com` | `noninesgiven` (alias) | `noninesgiven` |
+| Certificate Authority of Vibes | `rfc58008.com` | `rfc58008` (alias) | `rfc58008` |
+| Merge Conflict Counselling | `mergeconflictcounselling.com` | `mergeconflict` (alias) | `mergeconflictcounselling` |
+| Cache Invalidation That Grows with Your Patience | `invalid8.dev` | `invalid8` (alias) | `invalid8` |
+| Null Island Tourism Board | `visitnullisland.com` | `nullisland` (alias) | `nullisland`, served from `nullisland-dbx.pages.dev` |
+| BOM Squad | `bomsquad` subdomain | `bomsquad` | `bomsquad` |
+| Avian Carrier Logistics | `avian` subdomain | `avian` | `aviancarrierlogistics` |
+| The Leap Second Preservation Society | `leapsecond` subdomain | `leapsecond` | `leapsecondsociety` |
+| Epoch Preparedness Administration | `epoch` subdomain | `epoch` | `epochpreparedness` |
+| The Missing Days Commission | `missingdays` subdomain | `missingdays` | `missingdays` |
+| The Anywhere on Earth Time Authority | `aoe` subdomain | `aoe` | `aoetimeauthority` |
+| Bureau of Latency Enforcement | `latency` subdomain | `latency` | `latencyenforcement` |
+| Memorial for the Genes Lost to Excel | `genes` subdomain | `genes` | `geneslosttoexcel` |
+| Technical Debt Collector | none yet | `techdebt`, reserved | none yet |
+| Committee for the Preservation of Legacy Systems | none yet | `legacy`, reserved | none yet |
+
+One trap worth recording: `nullisland.pages.dev` belongs to an unrelated
+project, so that division's deployment answers on `nullisland-dbx.pages.dev`.
+Any DNS record for it must target the `-dbx` hostname, not the project name.
+
+### Attaching a host
+
+In the dashboard, **Workers & Pages -> the project -> Custom domains -> Set up
+a custom domain**. Because the zone lives in this account, the proxied CNAME is
+created for you, and Universal SSL already covers one level of subdomain, so no
+certificate work is needed. Do not create the DNS record by hand beforehand: a
+pre-existing CNAME blocks the flow.
+
+For a division that owns a domain, add a Redirect Rule so the alias does not
+serve a second copy: **Rules -> Redirect Rules**, matching
+`http.host eq "<label>.besteffortindustries.com"`, redirecting 301 to
+`concat("https://<the domain>", http.request.uri.path)`.
 
 ## Taking a division live
 
-There is a procedure and it is four steps. It is also written into an HTML
-comment directly above the table in `index.html`, on the assumption that
-whoever needs it will be looking at the table and not at this file.
+The procedure is also written into an HTML comment directly above the table in
+`index.html`, on the assumption that whoever needs it will be looking at the
+table and not at this file.
 
-1. Wrap the division's `.name` text in an anchor to the domain.
-2. Add a sibling `<div class="domain">` with the domain as visible text.
-3. Change `<span class="st soon">Coming soon</span>` to
+1. Move the row from Schedule B to the bottom of Schedule A.
+2. Replace its provisional `P-` number with the next sequential ID.
+3. Wrap the division's `.name` text in an anchor to its canonical host. The
+   name is the link; the address is not repeated beside it.
+4. Change `<span class="st soon">Coming soon</span>` to
    `<span class="st live">In service</span>`.
-4. Update the division count in the Entity Summary block.
+5. Update the counts: the Entity Summary block and both schedule labels. Do not
+   renumber the remaining Schedule B rows; the queue keeps its gaps.
+
+Then point the site itself at its canonical host: `rel=canonical`, `og:url`,
+`og:image` and `twitter:image` in that repository's `index.html`, the domain
+printed in `tools/og.html`, and `make og` to regenerate the card. Every absolute
+URL must name a host that resolves, or link previews break and the canonical
+tag points search engines at nothing.
 
 There is no data file, no templating layer and no build step feeding this
 table. Adding one would take longer than editing the table has ever taken.
