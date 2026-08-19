@@ -117,6 +117,15 @@
   details.schedule[open] summary { border-style: solid; color: var(--ink); margin-bottom: 10px; }
   details.schedule td:first-child { color: var(--dim); }
 
+  .st.gone { color: var(--warn); border: 1px solid var(--warn); }
+  tr.struck td:first-child { color: var(--dim); }
+  tr.struck .name { text-decoration: line-through; }
+  .redact {
+    background: var(--ink); color: transparent; padding: 0 .18em;
+    -webkit-user-select: none; user-select: none;
+  }
+  .redact::selection { background: var(--ink); color: transparent; }
+
   .st { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; white-space: nowrap; }
   .st.live { background: var(--ink); color: var(--bg); }
   .st.soon { border: 1px dashed var(--ink); color: var(--dim); }
@@ -162,7 +171,7 @@
       <dt>Headcount</dt><dd>1 (ALSO THE SINGLE POINT OF FAILURE)</dd>
       <dt>Warranties</dt><dd>NOT EXPRESSED. NOT IMPLIED. NOT CONSIDERED.</dd>
       <dt>Service level</dt><dd>BEST EFFORT (SEE NAME)</dd>
-      <dt>Operating divisions</dt><dd>15 (5 IN SERVICE, 10 QUEUED UNDER PROVISIONAL NUMBERS, PARENT SELF-REGISTERED AS 000)</dd>
+      <dt>Operating divisions</dt><dd>16 (11 IN SERVICE, 4 QUEUED UNDER PROVISIONAL NUMBERS, 1 STRUCK, PARENT SELF-REGISTERED AS 000)</dd>
     </dl>
   </section>
 
@@ -203,7 +212,7 @@
       Industries itself holds 000 so the register starts at the top and
       future disputes are settled by reading it.
     -->
-    <div class="sched-label">Schedule A &middot; In service (6)</div>
+    <div class="sched-label">Schedule A &middot; In service (12)</div>
     <table>
       <thead>
         <tr><th>ID</th><th>Division / Status</th></tr>
@@ -269,10 +278,70 @@
             <div class="desc">Where the world puts everything it lost.</div>
           </td>
         </tr>
+        <tr>
+          <td>006</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://bomsquad.besteffortindustries.com">BOM Squad</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">Invisible character disposal since U+FEFF. If you can see the problem, it is not our department.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>007</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://avian.besteffortindustries.com">Avian Carrier Logistics</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">We deliver your packets. Statistically. Full RFC 1149 conformance at a 44.5% delivery rate.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>008</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://leapsecond.besteffortindustries.com">The Leap Second Preservation Society</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">37 seconds of heritage. 9 years to save them. Adopt a leap second before 2035 abolishes the species.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>009</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://epoch.besteffortindustries.com">Epoch Preparedness Administration</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">Signed 32-bit time ends January 19, 2038. Prepare your household.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>010</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://missingdays.besteffortindustries.com">The Missing Days Commission</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">Cold cases, calendrical. Eleven days, last seen September 2, 1752. The case remains open on principle.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>011</td>
+          <td>
+            <div class="entry-head">
+              <span class="name"><a href="https://genes.besteffortindustries.com">Memorial for the Genes Lost to Excel</a></span>
+              <span class="st live">In service</span>
+            </div>
+            <div class="desc">In memory of the 27 gene symbols renamed so a spreadsheet would stop reading them as dates.</div>
+          </td>
+        </tr>
       </tbody>
     </table>
     <details class="schedule">
-      <summary><span>Schedule B &middot; Pending indefinitely (10)</span><span class="toggle"></span></summary>
+      <summary><span>Schedule B &middot; Pending indefinitely (4), struck (1)</span><span class="toggle"></span></summary>
       <div class="sched-label">Provisional numbering &middot; Surrendered on entry into service</div>
     <table>
       <tbody>
@@ -296,57 +365,7 @@
             <div class="desc">Heritage trust for production systems. Official blue plaques: DO NOT TOUCH, DO NOT ASK.</div>
           </td>
         </tr>
-        <tr>
-          <td>P-03</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">BOM Squad</span>
-              <span class="st soon">Coming soon*</span>
-            </div>
-            <div class="desc">Invisible character disposal since U+FEFF. If you can see the problem, it is not our department.</div>
-          </td>
-        </tr>
-        <tr>
-          <td>P-04</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">Avian Carrier Logistics</span>
-              <span class="st soon">Coming soon*</span>
-            </div>
-            <div class="desc">We deliver your packets. Statistically. Full RFC 1149 conformance at a 44.5% delivery rate.</div>
-          </td>
-        </tr>
-        <tr>
-          <td>P-05</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">The Leap Second Preservation Society</span>
-              <span class="st soon">Coming soon*</span>
-            </div>
-            <div class="desc">37 seconds of heritage. 9 years to save them. Adopt a leap second before 2035 abolishes the species.</div>
-          </td>
-        </tr>
-        <tr>
-          <td>P-06</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">Epoch Preparedness Administration</span>
-              <span class="st soon">Coming soon*</span>
-            </div>
-            <div class="desc">Signed 32-bit time ends January 19, 2038. Prepare your household.</div>
-          </td>
-        </tr>
-        <tr>
-          <td>P-07</td>
-          <td>
-            <div class="entry-head">
-              <span class="name">The Missing Days Commission</span>
-              <span class="st soon">Coming soon*</span>
-            </div>
-            <div class="desc">Cold cases, calendrical. Eleven days, last seen September 2, 1752. The case remains open on principle.</div>
-          </td>
-        </tr>
-        <tr>
+                                                <tr>
           <td>P-08</td>
           <td>
             <div class="entry-head">
@@ -366,20 +385,21 @@
             <div class="desc">The speed of light is the law. 100% compliance, zero staff, no budget.</div>
           </td>
         </tr>
-        <tr>
-          <td>P-10</td>
+                <tr class="struck">
+          <td>P-11</td>
           <td>
             <div class="entry-head">
-              <span class="name">Memorial for the Genes Lost to Excel</span>
-              <span class="st soon">Coming soon*</span>
+              <span class="name">The Right to Be Forgotten Office</span>
+              <span class="st gone">Erased</span>
             </div>
-            <div class="desc">In memory of the 27 gene symbols renamed so a spreadsheet would stop reading them as dates.</div>
+            <div class="desc">Erasure as a service, under Article 17 of the real regulation. Not pursued: the proposal, the minutes and <span class="redact">the name of whoever suggested it</span> have since exercised the right themselves. This row is all that survives, which the register regards as <span class="redact">conclusive</span> evidence that the division would have worked.</div>
           </td>
         </tr>
       </tbody>
     </table>
       <div class="sched-note">* Soon is not a date. Schedule B divisions are pending indefinitely,
-      in the precise sense: no definite date exists.</div>
+      in the precise sense: no definite date exists. A struck entry is not pending. It was
+      considered, and then it was not.</div>
     </details>
   </section>
 
