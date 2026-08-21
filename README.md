@@ -91,6 +91,7 @@ domain's own label, so the alias is obvious.
 | Memorial for the Genes Lost to Excel | `genes` subdomain | `genes` | `geneslosttoexcel` |
 | Binary Division of Weights and Measures | `binary` subdomain | `binary` | `binaryweights` |
 | Office of the Cosmic Ray Ombudsman | `cosmicray` subdomain | `cosmicray` | `cosmicrayombudsman` |
+| Protocol Hospice | `hospice` subdomain | `hospice` | `protocolhospice` |
 | Technical Debt Collector | none yet | `techdebt`, reserved | none yet |
 | Committee for the Preservation of Legacy Systems | none yet | `legacy`, reserved | none yet |
 
