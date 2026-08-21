@@ -89,6 +89,8 @@ domain's own label, so the alias is obvious.
 | The Anywhere on Earth Time Authority | `aoe` subdomain | `aoe` | `aoetimeauthority` |
 | Bureau of Latency Enforcement | `latency` subdomain | `latency` | `latencyenforcement` |
 | Memorial for the Genes Lost to Excel | `genes` subdomain | `genes` | `geneslosttoexcel` |
+| Binary Division of Weights and Measures | `binary` subdomain | `binary` | `binaryweights` |
+| Office of the Cosmic Ray Ombudsman | `cosmicray` subdomain | `cosmicray` | `cosmicrayombudsman` |
 | Technical Debt Collector | none yet | `techdebt`, reserved | none yet |
 | Committee for the Preservation of Legacy Systems | none yet | `legacy`, reserved | none yet |
 
